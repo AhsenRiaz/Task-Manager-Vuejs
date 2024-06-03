@@ -1,6 +1,10 @@
 <script setup>
+import CreateTask from '@/components/CreateTask.vue';
+import DefaultLayout from '@/layouts/DefaultLayout.vue';
 </script>
 
 <template>
-    <h1>Create Task</h1>
+    <DefaultLayout>
+        <CreateTask />
+    </DefaultLayout>
 </template>

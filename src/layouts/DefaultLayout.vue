@@ -13,7 +13,7 @@ import { RouterLink } from 'vue-router'
                 <RouterLink to="/create">Create Tasks</RouterLink>
             </div>
         </div>
-        <div class="w-[1400px] mx-auto">
+        <div class="w-[1400px] py-32 mx-auto">
             <slot />
         </div>
     </div>

@@ -15,7 +15,7 @@ export const useTaskStore = defineStore('task', {
 
     getters: {
         tasksByUser: (state) => {
-            const filteredTasks =  state.tasks.filter(task => task.assignee == state.loggedInUser.id);
+            const filteredTasks = state.tasks.filter(task => task.assignee == state.loggedInUser.id);
             return filteredTasks
         },
     },
@@ -25,7 +25,6 @@ export const useTaskStore = defineStore('task', {
             try {
                 const response = await axios.get('http://localhost:3000/tasks');
                 this.tasks = response.data;
-                console.log("fetchTasks", this.tasks)
             } catch (error) {
                 console.error("Failed to fetch tasks:", error);
             }
@@ -39,8 +38,10 @@ export const useTaskStore = defineStore('task', {
             }
         },
         async createTask(task) {
+            console.log("task", task)
             try {
                 const response = await axios.post('http://localhost:3000/tasks', task);
+                console.log("response", response)
                 this.tasks.push(response.data);
             } catch (error) {
                 console.error("Failed to create task:", error);
