@@ -21,8 +21,14 @@ const taskStore = useTaskStore()
 const login = async () => {
     console.log("ran")
     try {
-        await taskStore.login(username.value, password.value)
-        router.push('/login')
+        const response = await taskStore.login(username.value, password.value)
+        console.log("response", response)
+        if (response.success) {
+            router.push('/')
+        } else {
+            alert('Wrong username or password')
+        }
+
     } catch (error) {
         alert(error.message)
     }

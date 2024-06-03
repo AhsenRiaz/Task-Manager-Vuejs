@@ -15,32 +15,45 @@ export const useTaskStore = defineStore('task', {
 
     getters: {
         tasksByUser: (state) => {
-            return state.tasks.filter(task => task.assignee === state.loggedInUser.id)
+            const filteredTasks =  state.tasks.filter(task => task.assignee == state.loggedInUser.id);
+            return filteredTasks
         },
     },
 
     actions: {
         async fetchTasks() {
-            const response = await axios.get('http://localhost:3000/tasks');
-            this.tasks = response.data;
+            try {
+                const response = await axios.get('http://localhost:3000/tasks');
+                this.tasks = response.data;
+                console.log("fetchTasks", this.tasks)
+            } catch (error) {
+                console.error("Failed to fetch tasks:", error);
+            }
         },
         async fetchUsers() {
-            const response = await axios.get('http://localhost:3000/users');
-            this.users = response.data;
+            try {
+                const response = await axios.get('http://localhost:3000/users');
+                this.users = response.data;
+            } catch (error) {
+                console.error("Failed to fetch users:", error);
+            }
         },
         async createTask(task) {
-            const response = await axios.post('http://localhost:3000/tasks', task);
-            this.tasks.push(response.data);
+            try {
+                const response = await axios.post('http://localhost:3000/tasks', task);
+                this.tasks.push(response.data);
+            } catch (error) {
+                console.error("Failed to create task:", error);
+            }
         },
         async login(username, password) {
-            for (let user of this.users) {
-                console.log("users", user)
-                if (user.username === 'Ahsen' && user.password === 'superman') {
-                    console.log("found")
-                    this.loggedInUser = user
-                    break;
-                }
+            if (this.users.length === 0) {
+                await this.fetchUsers();
             }
+            const user = await this.users.find(user => user.username === username && user.password)
+            this.loggedInUser = user
+            return user ? { success: true } : { success: false }
+
         }
     }
-})
+});

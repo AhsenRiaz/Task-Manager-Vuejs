@@ -1,13 +1,15 @@
-import { createMemoryHistory, createRouter } from 'vue-router'
+import { createWebHistory, createRouter } from 'vue-router'
 import LoginView from '@/views/LoginView.vue'
-import TaskList from '@/views/TaskList.vue';
+import TaskList from '@/views/TasksView.vue';
+import CreateTask from '@/views/CreateTask.vue'
 
 const routes = [
-  { path: '/', component: LoginView },
-  { path: '/login', component: LoginView }
+  { path: '/', component: TaskList },
+  { path: '/login', component: LoginView },
+  { path: '/create', component: CreateTask }
 ];
 
 export const router = createRouter({
-  history: createMemoryHistory(),
+  history: createWebHistory(),
   routes
 })
