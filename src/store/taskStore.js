@@ -12,7 +12,7 @@ export const useTaskStore = defineStore('task', {
             assignee: null,
         },
     }),
-    
+
     getters: {
         tasksByUser: (state) => {
             return state.tasks.filter(task => task.assignee === state.loggedInUser.id)
@@ -32,13 +32,15 @@ export const useTaskStore = defineStore('task', {
             const response = await axios.post('http://localhost:3000/tasks', task);
             this.tasks.push(response.data);
         },
-        login(username, password) {
-            const user = this.users.find(user => user.username === username && user.password === password);
-            if (user) {
-                this.loggedInUser = user;
-            } else {
-                throw new Error('Invalid username or password');
+        async login(username, password) {
+            for (let user of this.users) {
+                console.log("users", user)
+                if (user.username === 'Ahsen' && user.password === 'superman') {
+                    console.log("found")
+                    this.loggedInUser = user
+                    break;
+                }
             }
-        },
+        }
     }
 })

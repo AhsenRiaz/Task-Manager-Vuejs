@@ -3,61 +3,71 @@
         [
             {
                 "id": 1,
-                "first_name": "Fèi",
+                "username": "Ahsen",
+                "password": "superman",
                 "last_name": "Swanson",
                 "email": "kswanson0@elpais.com"
             },
             {
                 "id": 2,
-                "first_name": "Séverine",
+                "username": "Bob",
+                "password": "batman",
                 "last_name": "Newlove",
                 "email": "snewlove1@mediafire.com"
             },
             {
                 "id": 3,
-                "first_name": "Camélia",
+                "username": "Alice",
+                "password": "spiderman",
                 "last_name": "Huntall",
                 "email": "rhuntall2@jigsy.com"
             },
             {
                 "id": 4,
-                "first_name": "Sòng",
+                "username": "John",
+                "password": "password",
                 "last_name": "Watkins",
                 "email": "swatkins3@upenn.edu"
             },
             {
                 "id": 5,
-                "first_name": "Véronique",
+                "username": "Veronica",
+                "password": "password",
                 "last_name": "Taunton.",
                 "email": "etaunton4@hugedomains.com"
             },
             {
                 "id": 6,
-                "first_name": "Yú",
+                "username": "Yu",
+                "password": "password",
                 "last_name": "Forson",
                 "email": "rforson5@usatoday.com"
             },
             {
                 "id": 7,
-                "first_name": "Esbjörn",
+                "username": "Esbjorn",
+                "password": "password",
                 "last_name": "Awty",
                 "email": "eawty6@microsoft.com"
             },
             {
                 "id": 8,
-                "first_name": "Sélène",
+                "username": "Selene",
+                "password": "password",
                 "last_name": "Roth",
                 "email": "mroth7@tripadvisor.com"
             },
             {
                 "id": 9,
-                "first_name": "Bénédicte",
+                "username": "Bénédicte",
+                "password": "password",
                 "last_name": "Mc Dermid",
                 "email": "rmcdermid8@census.gov"
             },
             {
                 "id": 10,
-                "first_name": "Håkan",
+                "username": "Håkan",
+                "password": "password",
                 "last_name": "Nisot",
                 "email": "pnisot9@last.fm"
             }
