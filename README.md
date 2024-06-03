@@ -1,7 +1,25 @@
 # Vue 3 + Vite
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+# Tech Stack
+Shadcn for ui components
+Vuejs
+Vue-Router
+Pinia also known as Vuex
 
-## Recommended IDE Setup
 
-- [VS Code](https://code.visualstudio.com/) + [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (previously Volar) and disable Vetur
+
+# Project Setup
+
+# Clone project
+`git clone https://github.com/AhsenRiaz/Task-Manager-Vuejs.git`
+
+Install dependencies
+`yarn`
+
+Mock Server setup
+`npx json-server db.json`
+
+# Start Project
+`yarn dev`
+
+Happy Development :)
